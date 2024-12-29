@@ -1,0 +1,131 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #6610f2, #007bff);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 20px;
+  }
+  
+  .custom-form-container {
+    width: 50%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-input {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-input:focus {
+    border-color: #6610f2;
+    outline: none;
+  }
+  
+  .form-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .text-danger {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  /* Buttons Styling */
+  .custom-btn {
+    font-size: 16px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-add {
+    background-color: #6610f2;
+    color: white;
+  }
+  
+  .btn-add:hover {
+    background-color: #007bff;
+  }
+  
+  .btn-edit {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .btn-edit:hover {
+    background-color: #e0a800;
+  }
+  
+  button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Validation Error Messages */
+  small.text-danger {
+    font-size: 0.875rem;
+    display: block;
+    margin-top: 8px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .custom-form-container {
+      padding: 20px;
+      margin: 10px;
+    }
+  
+    h2 {
+      font-size: 1.75rem;
+    }
+  
+    .custom-input {
+      font-size: 14px;
+    }
+  
+    .btn-add, .btn-edit {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .custom-form-container {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .custom-input {
+      font-size: 12px;
+    }
+  
+    .btn-add, .btn-edit {
+      font-size: 12px;
+      padding: 8px 15px;
+    }
+  
+    small.text-danger {
+      font-size: 0.8rem;
+    }
+  }
+  

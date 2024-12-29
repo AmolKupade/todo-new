@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #6610f2;
+  }
+  
+  /* Container Styling */
+  .container {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  
+  /* Add Category Button */
+  .custom-btn {
+    background-color: #6610f2;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-btn:hover {
+    background-color: #007bff;
+  }
+  
+  .custom-btn i {
+    margin-right: 8px;
+  }
+  
+  /* Category Table Styling */
+  .custom-table-container {
+    margin-top: 20px;
+  }
+  
+  .custom-table {
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  th {
+    background-color: #6610f2;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  td {
+    font-size: 14px;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .text-primary {
+    color: #6610f2 !important;
+  }
+  
+  .fw-bold {
+    font-weight: 700;
+  }
+  
+  /* Action Buttons */
+  .custom-action-btn {
+    border-radius: 7px;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .custom-action-btn i {
+    margin-right: 5px;
+  }
+  
+  .custom-action-btn:hover {
+    opacity: 0.8;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .container {
+      max-width: 100%;
+      padding: 10px;
+    }
+  
+    .custom-btn {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .table-responsive {
+      margin-top: 20px;
+    }
+  
+    th, td {
+      font-size: 12px;
+    }
+  
+    .custom-action-btn {
+      font-size: 12px;
+      padding: 3px 8px;
+    }
+  
+    .text-muted {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 18px;
+    }
+  
+    .custom-btn {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .table-responsive {
+      font-size: 12px;
+    }
+  
+    th, td {
+      font-size: 10px;
+    }
+  }
+  

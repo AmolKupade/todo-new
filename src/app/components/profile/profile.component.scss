@@ -1,0 +1,138 @@
+
+.profile-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Profile Card */
+.profile-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #6c63ff;
+    margin-bottom: 15px;
+}
+
+.profile-info h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-info p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Profile Details */
+.profile-details {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.profile-details h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #6c63ff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.details {
+    margin-top: 10px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.label {
+    font-weight: bold;
+    color: #555;
+}
+
+.value {
+    color: #777;
+}
+
+/* Edit Button */
+.edit-btn {
+    background: linear-gradient(120deg, #6c63ff, #ee609c);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.edit-btn:hover {
+    background: linear-gradient(120deg, #ee609c, #6c63ff);
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 600px) {
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info h2 {
+        font-size: 20px;
+    }
+
+    .profile-info p {
+        font-size: 14px;
+    }
+
+    .profile-details h3 {
+        font-size: 18px;
+    }
+
+    .edit-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}

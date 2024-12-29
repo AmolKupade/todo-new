@@ -1,0 +1,45 @@
+<div class="login-wrapper mt-3" *ngIf="!isLoggedIn"> 
+  <div class="login-card">
+      <div class="form-header">
+          <h1 class="login-title mb-4">Welcome Back</h1>
+          <p class="login-subtitle">Log in to access your account and task management!</p>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <div class="form-group">
+              <label for="email">Email Address</label>
+              <input 
+                  type="email" 
+                  id="email" 
+                  placeholder="Enter your email" 
+                  formControlName="email" 
+                  [class.error]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+          <span class="error-message">
+            Valid email is required.
+        </span>
+        }
+          </div>
+          <div class="form-group">
+              <label for="password">Password</label>
+              <input 
+                  type="password" 
+                  id="password" 
+                  placeholder="Enter your password" 
+                  formControlName="password" 
+                  [class.error]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                  @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+                    <span class="error-message">
+                      Password is required (min 6 characters).
+                  </span>
+                  }
+             
+          </div>
+          <button type="submit" class="btn btn-login mb-3" [disabled]="loginForm.invalid">Log In</button>
+      </form>
+      <p class="signup-link">New here? <a routerLink="/register" style="text-decoration: none;">Sign Up</a></p>
+  </div>
+</div>
+
+<!-- <div *ngIf="isLoggedIn">
+  <p>You are already logged in.</p> 
+</div> -->
