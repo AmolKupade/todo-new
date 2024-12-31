@@ -12,41 +12,36 @@
     </button>
   </div>
 
-  <!-- Categories Table -->
   <div class="table-responsive shadow-lg rounded custom-table-container">
     <table class="table table-hover table-bordered align-middle custom-table">
       <thead>
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Name</th>
-          <th scope="col" style="width: 250px;">Actions</th>
+          <th scope="col" style="width: 250px">Actions</th>
         </tr>
       </thead>
       <tbody>
-
-        @for (item of tasks; track $index) 
-        {
-          <tr>
-            <td class="text-center">{{ $index + 1 }}</td>
-            <td class="fw-bold text-primary">{{ item.name }}</td>
-            <td class="text-center">
-              <button
-                class="btn btn-primary btn-sm custom-action-btn me-2"
-                [routerLink]="'/task/' + item._id"
-              >
-                Edit
-              </button>
-  
-              <button
-                class="btn btn-danger btn-sm custom-action-btn"
-                (click)="delete(item._id)"
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
+        @for (item of tasks; track $index) {
+        <tr>
+          <td class="text-center">{{ $index + 1 }}</td>
+          <td class="fw-bold text-primary">{{ item.name }}</td>
+          <td class="text-center">
+            <button
+              class="btn btn-primary btn-sm custom-action-btn me-2"
+              [routerLink]="'/task/' + item._id"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-danger btn-sm custom-action-btn"
+              (click)="delete(item._id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
         }
-        
       </tbody>
     </table>
   </div>

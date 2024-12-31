@@ -9,36 +9,30 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './task.component.html',
-  styleUrl: './task.component.scss'
+  styleUrl: './task.component.scss',
 })
-
 export class TaskComponent implements OnInit {
-
-
-
   taskService = inject(TaskService);
 
-  tasks: any[] = [] ; 
+  tasks: any[] = [];
 
   ngOnInit(): void {
-   this.getAllTask()
+    this.getAllTask();
   }
 
-  getAllTask(){
+  getAllTask() {
     this.taskService.getTasks().subscribe({
       next: (result: any) => {
         this.tasks = result;
       },
-      error: (error) => {
-      }
+      error: (error) => {},
     });
   }
 
-  
   delete(id: string) {
     Swal.fire({
       title: 'Are you sure?',
-      text: 'You won\'t be able to revert this!',
+      text: "You won't be able to revert this!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -53,12 +47,14 @@ export class TaskComponent implements OnInit {
           },
           error: (err) => {
             console.error('Error deleting task:', err);
-            Swal.fire('Error!', 'There was an error deleting the task.', 'error');
+            Swal.fire(
+              'Error!',
+              'There was an error deleting the task.',
+              'error'
+            );
           },
         });
       }
     });
   }
-  
 }
-

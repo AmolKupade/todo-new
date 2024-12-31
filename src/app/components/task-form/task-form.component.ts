@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { TaskService } from '../../services/task.service';
 import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-task-form',
   standalone: true,
-  imports: [RouterLink, CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './task-form.component.html',
   styleUrl: './task-form.component.scss'
 })
