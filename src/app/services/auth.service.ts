@@ -1,13 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment.development';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  API_URL_REGISTER = 'http://localhost:8002/auth/register/';
-  API_URL_LOGIN = 'http://localhost:8002/auth/login/';
-
   http = inject(HttpClient);
 
   registerNewUser(
@@ -15,7 +13,7 @@ export class AuthService {
     email: string,
     password: string
   ): Observable<any> {
-    return this.http.post(this.API_URL_REGISTER, {
+    return this.http.post(environment.API_URL_REGISTER, {
       name,
       email,
       password,
@@ -23,7 +21,7 @@ export class AuthService {
   }
 
   logInUser(email: string, password: string): Observable<any> {
-    return this.http.post(this.API_URL_LOGIN, {
+    return this.http.post(environment.API_URL_LOGIN, {
       email,
       password,
     });
