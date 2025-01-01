@@ -1,23 +1,22 @@
-
 <div class="profile-container">
-    <div class="profile-card">
-        <div class="profile-header">
-            <div class="profile-info">
-                <h2>{{authService.userName}}</h2>
-            </div>
-        </div>
-        <div class="profile-details">
-            <h3>Account Information</h3>
-            <div class="details">
-                <div class="detail-item">
-                    <span class="label">Email:</span>
-                    <span class="value">{{authService.userEmail}}</span>
-                </div>
-                <div class="detail-item">
-                    <span class="label">Username:</span>
-                    <span class="value">{{authService.userName}}</span>
-                </div>
-            </div>
-        </div>
+  <div class="profile-card">
+    <div class="profile-header">
+      <div class="profile-info">
+        <h2>Profile</h2>
+      </div>
     </div>
+    <div class="profile-details">
+      <h3>Account Information</h3>
+      <div class="details">
+        <div class="detail-item">
+          <span class="label">Email:</span>
+          <span class="value">{{ authService.userEmail }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Username:</span>
+          <span class="value">{{ authService.userName }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

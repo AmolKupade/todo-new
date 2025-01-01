@@ -10,6 +10,7 @@ import { Router, RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import confetti from 'canvas-confetti';
 import { CommonModule } from '@angular/common';
+import { Login } from '../../types/login';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -46,7 +47,7 @@ export class LoginComponent {
     const value = this.loginForm.value;
 
     this.authService.logInUser(value.email!, value.password!).subscribe({
-      next: (result) => {
+      next: (result:Login) => {
         this.launchFlowerSpray();
         localStorage.setItem('token', result.data.token);
         localStorage.setItem('user', JSON.stringify(result.data));

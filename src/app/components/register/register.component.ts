@@ -52,7 +52,7 @@ export class RegisterComponent {
           Swal.fire({
             icon: 'success',
             title: 'Registration Successful! 🌸',
-            text: 'Welcome to the family! Redirecting to login...',
+            text: 'Welcome to your task! Redirecting to login...',
             timer: 2000,
             showConfirmButton: false,
           }).then(() => {
