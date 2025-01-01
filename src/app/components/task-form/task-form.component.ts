@@ -36,16 +36,9 @@ export class TaskFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    console.log(this.id);
-
     if (this.id) {
       this.isEdit = true;
-
-    
       this.taskService.getTaskById(this.id).subscribe((result: any) => {
-        console.log('Fetched Category:', result);
-
-      
         this.taskForm.patchValue({
           task: result.name, 
         });
@@ -55,8 +48,6 @@ export class TaskFormComponent implements OnInit {
 
   onSubmit() {
     if (this.taskForm.valid) {
-      console.log('Form Submitted:', this.taskForm.value);
-  
       this.taskService.addNewTask(this.task?.value).subscribe({
         next: () => {
           Swal.fire({
@@ -69,8 +60,6 @@ export class TaskFormComponent implements OnInit {
           });
         },
         error: (err) => {
-          console.error('Error adding category:', err);
-  
           Swal.fire({
             title: 'Error!',
             text: 'Failed to add task. Please try again.',

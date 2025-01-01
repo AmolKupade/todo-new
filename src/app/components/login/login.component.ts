@@ -48,9 +48,6 @@ export class LoginComponent {
     this.authService.logInUser(value.email!, value.password!).subscribe({
       next: (result) => {
         this.launchFlowerSpray();
-
-        console.log(result.data.token);
-
         localStorage.setItem('token', result.data.token);
         localStorage.setItem('user', JSON.stringify(result.data));
 

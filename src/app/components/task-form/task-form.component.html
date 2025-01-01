@@ -1,50 +1,51 @@
 <h2 class="text-center mt-4 mb-4 text-gradient">
-    {{ isEdit ? "Edit Task" : "Add New Task" }}
-  </h2>
-  <div class="container custom-form-container">
-    <form [formGroup]="taskForm" class="needs-validation">
-      <div class="mb-4">
-        <label for="category" class="form-label fw-bold text-secondary">Task Name</label>
-        <input
-          id="task"
-          type="text"
-          formControlName="task"
-          class="form-control custom-input"
-          placeholder="Enter the task name here"
-        />
-        @if(task?.invalid && (task?.dirty || task?.touched)) {
-          <div class="mt-2">
-            <small class="text-danger" *ngIf="task?.errors?.['required']">
-              Task is required.
-            </small>
-            <small class="text-danger" *ngIf="task?.errors?.['minlength']">
-              Task must be at least 4 characters long.
-            </small>
-          </div>
-        }   
-      </div>
-      <div class="text-center mt-5">
-        @if(isEdit) {
-          <button
-          type="submit"
-          class="btn btn-edit custom-btn me-3"
-          (click)="update()"
-          [disabled]="taskForm.invalid"
-        >
-          <i class="bi bi-pencil-square"></i> Update
-        </button>
+  {{ isEdit ? "Edit Task" : "Add New Task" }}
+</h2>
+<div class="container custom-form-container">
+  <form [formGroup]="taskForm" class="needs-validation">
+    <div class="mb-4">
+      <label for="category" class="form-label fw-bold text-secondary"
+        >Task Name</label
+      >
+      <input
+        id="task"
+        type="text"
+        formControlName="task"
+        class="form-control custom-input"
+        placeholder="Enter your task name here"
+      />
+      @if(task?.invalid && (task?.dirty || task?.touched)) {
+      <div class="mt-2">
+        @if (task?.errors?.['required']) {
+        <small class="text-danger"> Task is required. </small>
+        } @if (task?.errors?.['minlength']) {
+        <small class="text-danger">
+          Task must be at least 4 characters long.
+        </small>
         }
-       @if(!isEdit) {
-        <button
+      </div>
+      }
+    </div>
+    <div class="text-center mt-5">
+      @if(isEdit) {
+      <button
+        type="submit"
+        class="btn btn-edit custom-btn me-4"
+        (click)="update()"
+        [disabled]="taskForm.invalid"
+      >
+        Update
+      </button>
+      } @if(!isEdit) {
+      <button
         type="submit"
         class="btn btn-add custom-btn"
         (click)="onSubmit()"
         [disabled]="taskForm.invalid"
       >
-        <i class="bi bi-plus-circle"></i> Add
+        Add
       </button>
-       }
-      </div>
-    </form>
-  </div>
-  
+      }
+    </div>
+  </form>
+</div>
